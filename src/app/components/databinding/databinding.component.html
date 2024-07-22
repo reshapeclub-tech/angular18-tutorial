@@ -1,0 +1,59 @@
+<p>Databinding works!</p>
+<h1 class="text-danger">One way Data Binding</h1>
+<div class="row">
+    
+    <div class="col-4">
+        <h3>Interpolation(.ts->.html)</h3>
+    </div>
+    <div class="col-4">
+        <h3>Property Binding(.ts->.html)</h3>
+    </div>
+    <div class="col-4">
+        <h3>Event Binding(.html->.ts)</h3>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-4 bg-success">
+        <!-- <h3>One way- from .ts to .html(Interpolation)</h3> -->
+
+        <h4>{{courseName}}</h4>
+        <div>{{inputType}}</div>
+        <input type="text" value="{{courseName}}" placeholder="Enter your text here">
+        <input type="{{inputType}}">
+
+    </div>
+    <div class="col-4">
+        <div [class]="myClassName">Danger</div>
+        <input type="text" [value]="courseName">
+
+    </div>
+    <div class="col-4">
+        <button class="btn btn-success" (click)="showAlert('Welcome to Angular 18 Tutorial')">Show Welcome</button>
+        <span (click)="showAlert('This is a span')">Click Me</span>
+        <button class="btn btn-success" (click)="changeCourseName()">Change Course</button>
+
+        
+    </div>
+</div>
+
+<h1 class="text-danger">2 way Data Binding</h1>
+
+<div class="row">
+<div class="col-4">
+    <input type="text" [(ngModel)]="courseName"/>
+    <input type="checkbox" [(ngModel)]="isIndian">
+    <select [(ngModel)]="stateName">
+        <option value="">Select</option>
+        <option value="Essex">Essex</option>
+        <option value="Sussex">Sussex</option>
+
+    </select>
+</div>
+<div class="col-4">
+    <h2>My Name is {{firstName()}}</h2>
+</div>
+<div class="col-4"></div>
+
+</div>
